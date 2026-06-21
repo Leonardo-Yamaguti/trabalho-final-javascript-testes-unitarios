@@ -223,6 +223,10 @@ Armazenamento dos relatórios gerados durante a execução para auditoria e aná
 Validação periódica da aplicação mesmo sem alterações recentes no código.
 
 
+### Evidência
+![CI](image.png)
+![RELATÓRIO](image-1.png)
+
 ## Conclusão
 
 A solução implementada atende aos requisitos propostos para o trabalho de CI/CD, utilizando GitHub Actions para automatizar testes, geração de relatórios e armazenamento de artefatos. A pipeline garante maior confiabilidade no processo de desenvolvimento e demonstra a aplicação prática dos conceitos de Integração Contínua estudados na disciplina.
