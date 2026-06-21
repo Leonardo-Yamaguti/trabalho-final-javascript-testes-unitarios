@@ -1,0 +1,17 @@
+{
+  "name": "trabalhofinaljavascript",
+  "version": "1.0.0",
+  "description": "Projeto de testes automatizados com GitHub Actions",
+  "type": "module",
+  "main": "src/servicoDePagamento.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "c8 --reporter=text --reporter=html mocha"
+  },
+  "author": "Leonardo Yamaguti",
+  "license": "ISC",
+  "devDependencies": {
+    "c8": "^10.1.2",
+    "mocha": "^11.7.6"
+  }
+}

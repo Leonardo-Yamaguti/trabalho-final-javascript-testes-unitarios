@@ -1,0 +1,38 @@
+name: CI - Testes Automatizados JavaScript
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 1'
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20, 22]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar testes
+        run: npm test
+
+      - name: Gerar cobertura
+        run: npm run coverage
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: cobertura-node-${{ matrix.node-version }}
+          path: coverage/
